@@ -2,3 +2,4 @@
 build/
 lib/
 .vscode
+tmp.c.old

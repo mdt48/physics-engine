@@ -10,8 +10,9 @@ DEPS := $(OBJS:.o=.d)
 CXX := clang++
 # CC := clang++
 
-CPPFLAGS := -I/opt/homebrew/Cellar/glfw/3.3.8/include -I/opt/homebrew/Cellar/glew/2.2.0_1/include
-LDFLAGS := -L/opt/homebrew/Cellar/glew/2.2.0_1/lib -lglfw -L/opt/homebrew/Cellar/glfw/3.3.8/lib -lglew -framework OpenGL
+# CPPFLAGS := -I/opt/homebrew/Cellar/glfw/3.3.8/include -I/opt/homebrew/Cellar/glew/2.2.0_1/include
+CPPFLAGS := -I/opt/homebrew/Cellar/glfw/3.3.8/include -I./include/
+LDFLAGS := -L/opt/homebrew/Cellar/glfw/3.3.8/lib -lglfw -framework OpenGL
 
 $(BUILD_DIR)/$(TARGET_EXEC): $(OBJS)
 	$(CXX) $(OBJS) -o $@ $(LDFLAGS)
