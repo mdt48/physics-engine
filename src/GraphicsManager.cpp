@@ -19,18 +19,21 @@ void GraphicsManager::destroy() {
     glfw_destroy();
 }
 
-void GraphicsManager::render_objects() {
+void GraphicsManager::render() {
     while(!glfwWindowShouldClose(window))
-    // while (1)
     {
-        // input
-        // processInput(window);
-        // rendering commands here
-        // ...
-        // check and call events and swap the buffers
+        handle_input();
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
         glfwPollEvents();
         glfwSwapBuffers(window);
     }
 }
+
+void GraphicsManager::handle_input() {
+    // more controls later
+    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+        glfwSetWindowShouldClose(window, true);
+}
+
+

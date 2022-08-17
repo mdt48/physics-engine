@@ -1,5 +1,6 @@
 
 #define GL_SILENCE_DEPRECATION
+
 #include <glad/glad.h>
 #include <physics-engine/glfw-wrapper.hpp>
 #include <vector>
@@ -13,12 +14,14 @@ class GraphicsManager {
     public:
         GraphicsManager(int width, int height, char* title);
         void add_triangle();
-        void render_objects();
+        void render();
         void destroy();
     private:
         Window* window;
         std::vector<unsigned int> VAOs;
         std::vector<unsigned int> VBOs;
+
+        void handle_input();
 };
 
 #endif
