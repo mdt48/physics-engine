@@ -1,5 +1,9 @@
-#include <physics-engine/glfw-wrapper.h>
+
+#define GL_SILENCE_DEPRECATION
+#include <glad/glad.h>
+#include <physics-engine/glfw-wrapper.hpp>
 #include <vector>
+#include <stdio.h>
 
 
 #ifndef GraphicsManager_H

@@ -1,7 +1,7 @@
-#include <GLFW/glfw3.h>
+#include <physics-engine/glfw-wrapper.hpp>
 #include <iostream> //for cout
 
-GLFWwindow* glfw_create(int width, int height, char* title){
+Window* glfw_create(int width, int height, char* title){
     if( !glfwInit() )
     {
         fprintf( stderr, "Failed to initialize GLFW\n" );
@@ -13,7 +13,7 @@ GLFWwindow* glfw_create(int width, int height, char* title){
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // To make MacOS happy; should not be needed
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); // We don't want the old OpenGL 
 
-    GLFWwindow* window; 
+    Window* window; 
     window = glfwCreateWindow( width, height, title, NULL, NULL);
 
     if (window == NULL)
