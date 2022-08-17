@@ -1,5 +1,6 @@
 #include <GLFW/glfw3.h>
 
+typedef GLFWwindow Window;
 
-GLFWwindow* glfw_create(int width, int height, char* title);
+Window* glfw_create(int width, int height, char* title);
 void glfw_destroy();
